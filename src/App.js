@@ -85,9 +85,6 @@ class App extends Component {
     }
     return (
       <main className='App'>
-        <BookmarkItem title="TesTING" url="htt://crack.com"/>
-        <BookmarkList bookmarks={[{title: 'Ted Leo', url: 'www.whatever.com', rating: 3}]} />
-        <Rating value={4}/>
         <h1>Bookmarks!</h1>
         <BookmarksContext.Provider value={contextValue}>
           <Nav />
