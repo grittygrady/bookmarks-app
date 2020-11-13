@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
-import BookmarksContext from '../BookmarksContext'
+import PropTypes from 'prop-types';
+import BookmarksContext from '../BookmarksContext';
 import BookmarkItem from '../BookmarkItem/BookmarkItem';
 import './BookmarkList.css'
 
 class BookmarkList extends Component {
-  static contextType = BookmarksContext
+  static proptTypes = {
+    bookmarks: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.string,
+        ]).isRequired,
+      })
+    )
+  };
+
+  static defaultProps = {
+    bookmarks: []
+  };
+
+  static contextType = BookmarksContext;
 
   render() {
     const { bookmarks } = this.context
